@@ -1,0 +1,16 @@
+<template name="activitystream">
+    <div class="list-group">
+        {{#each activities}}
+        <div class="list-group-item">
+            <div class="row-content">
+                <div class="small least-content">{{formatDate created_at}}</div>
+                <p class="list-group-item-heading">{{title}}</p>
+                <p class="small list-group-item-text">{{{content}}}</p>
+            </div>
+            {{#if currentIsAdmin}}
+                <button type="button" class="delete-activity-item close">&times;</button>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+</template>
